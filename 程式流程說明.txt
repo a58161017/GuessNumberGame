@@ -1,0 +1,7 @@
+1. 使用程式時，要更改MulticastClient、ServerThread裡面的IP位置，切勿使用localhost或127.0.0.1，可以使用虛擬IP
+2. MulticastServerThread繼承ServerThread，因此server除了可以監聽群播的封包，也可以在自己的IP上監聽封包，所以server可以對每個client傳遞的封包作區別
+3. server主要功用是將client的訊息轉發至群播上
+4. client是接收群播上的封包
+5. 由於結合第3、4點，所以server對client的型態是one to many
+6. client可以輸入「NumGame」(不分大小寫)，server會產生猜數字遊戲，並將訊息傳遞至群播上
+7. 由於所有client都是接收群播訊息，因此可以一同加入猜數字，哪怕是中途加入也可以
